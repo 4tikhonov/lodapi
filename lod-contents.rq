@@ -1,0 +1,16 @@
+#+ summary: LODlaundromat endpoint with SPARQL2Git 
+#+ endpoint: http://sparql.backend.lodlaundromat.org
+#+ tags:
+#+   - lod
+#+ method: GET
+#+ pagination: 1000
+
+PREFIX llo: <http://lodlaundromat.org/ontology/>
+PREFIX ll: <http://lodlaundromat.org/resource/>
+SELECT ?md5 ?doc ?triples ?duplicates {
+  [] llo:triples ?triples;
+    llo:duplicates ?duplicates ;
+    llo:url ?doc ;
+    llo:md5 ?md5 .
+  FILTER(?triples > 0)
+} ORDER BY DESC(?triples + ?duplicates) LIMIT 1000

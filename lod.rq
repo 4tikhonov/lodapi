@@ -1,7 +1,7 @@
-#+ summary: Testing DBpedia endpoint with SPARQL2Git
+#+ summary: LODlaundromat endpoint with SPARQL2Git
 #+ endpoint: http://sparql.backend.lodlaundromat.org
 #+ tags:
-#+   - dbpedia
+#+   - lod
 #+ method: GET
 #+ pagination: 50
 
